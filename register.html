@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+3:wght@400;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="CSS\register.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-brand">EventHub</div>
+        <div class="nav-right">
+            <a href="index.html">Logout</a>
+            <a href="#">
+                <div class="avatar">ME</div>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-grid">
+
+            <!-- EVENT DETAILS CARD -->
+            <aside class="event-card">
+                <h2>Code Sprint 2025</h2>
+                <div class="fest-name">Gateways 2026 · CS Department</div>
+                <div class="event-details">
+                    <div class="event-detail-item">
+                        <div class="detail-text">
+                            <span class="detail-label">Date</span>
+                            <span class="detail-value">March 14, 2025</span>
+                        </div>
+                    </div>
+                    <div class="event-detail-item">
+                        <div class="detail-text">
+                            <span class="detail-label">Time</span>
+                            <span class="detail-value">10:00 AM – 4:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="event-detail-item">
+                        <div class="detail-text">
+                            <span class="detail-label">Venue</span>
+                            <span class="detail-value">Lab Block 3, Room 301</span>
+                        </div>
+                    </div>
+
+                    <div class="event-detail-item">
+                        <div class="detail-text">
+                            <span class="detail-label">Team Size</span>
+                            <span class="detail-value">1 - 4 members</span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="event-divider">
+                <p class="event-desc">A 6-hour competitive coding challenge. Solve algorithmic problems across
+                    varying difficulty levels. Open to all branches.</p>
+                <div class="seats-left">62 seats left <span>out of 100</span></div>
+            </aside>
+
+            <!-- Registration Form -->
+
+            <div id="viewer-form" class="form-container">
+                <h3>Viewer Registration</h3>
+
+                <div class="section-sep">Personal Details</div>
+
+                <div class="input-group" id="vg-designation">
+                    <label>Designation</label>
+                    <select id="v-designation">
+                        <option value="">Select designation</option>
+                        <option>Mr</option>
+                        <option>Miss</option>
+                        <option>Mrs</option>
+                    </select>
+                    <span class="error-msg">Please select a designation.</span>
+                </div>
+
+                <div class="fields-row">
+                    <div class="input-group" id="vg-firstname">
+                        <label>First Name</label>
+                        <input type="text" id="v-firstname" placeholder="John">
+                        <span class="error-msg">First name is required.</span>
+                    </div>
+                    <div class="input-group" id="vg-lastname">
+                        <label>Last Name</label>
+                        <input type="text" id="v-lastname" placeholder="Doe">
+                        <span class="error-msg">Last name is required.</span>
+                    </div>
+                </div>
+
+                <div class="fields-row">
+                    <div class="input-group" id="vg-roll">
+                        <label>Roll No.</label>
+                        <input type="text" id="v-roll" placeholder="e.g. 22CS045">
+                        <span class="error-msg">Roll number is required.</span>
+                    </div>
+                    <div class="input-group" id="vg-dept">
+                        <label>Department</label>
+                        <select id="v-dept">
+                            <option value="">Select department</option>
+                            <option>Computer Science</option>
+                            <option>Electronics</option>
+                            <option>Mechanical</option>
+                            <option>Civil</option>
+                            <option>Electrical</option>
+                            <option>Other</option>
+                        </select>
+                        <span class="error-msg">Please select a department.</span>
+                    </div>
+                </div>
+
+                <div class="fields-row">
+                    <div class="input-group" id="vg-phone">
+                        <label>Phone No.</label>
+                        <input type="tel" id="v-phone" placeholder="+91 XXXXX XXXXX" maxlength="10">
+                        <span class="error-msg">Enter a valid 10-digit phone number.</span>
+                    </div>
+                    <div class="input-group" id="vg-email">
+                        <label>Email</label>
+                        <input type="email" id="v-email" placeholder="john@college.edu">
+                        <span class="error-msg">Enter a valid email address.</span>
+                    </div>
+                </div>
+
+                <div class="input-group" id="vg-slot">
+                    <label>Preferred Time Slot</label>
+                    <select id="v-slot">
+                        <option value="">Select a slot</option>
+                        <option>Morning Session — 10:00 AM to 12:00 PM</option>
+                        <option>Afternoon Session — 1:00 PM to 3:00 PM</option>
+                        <option>Full Day — 10:00 AM to 4:00 PM</option>
+                    </select>
+                    <span class="error-msg">Please select a time slot.</span>
+                </div>
+
+                <button class="submit-btn" id="viewer-submit">Register as Viewer</button>
+
+
+            </div>
+
+    </main>
+
+</body>
+
+</html>

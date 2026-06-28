@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EventHub — My Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS\profile.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-brand">EventHub</div>
+    <div class="nav-links">
+      <a href="studenthome.html">Events</a>
+      <a href="profile.html" class="active">My Registrations</a>
+    </div>
+    <div class="nav-right">
+      <a href="login.html">Logout</a>
+    </div>
+  </nav>
+
+  <div class="profile-header">
+    <div class="avatar-lg">RS</div>
+    <div class="profile-info">
+      <h1>Matthew Eapen</h1>
+      <p>Student ID: 2647138 | MCA - Semester 1</p>
+      <div class="profile-tags">
+        <span class="ptag">Computer Science</span>
+        <span class="ptag">CHRIST University</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="layout">
+
+    <!-- LEFT: Student Details -->
+    <div>
+      <div class="details-card">
+        <div class="details-card-head">Student Information</div>
+        <div class="detail-row">
+          <span class="dr-key">Full Name</span>
+          <span class="dr-val">Matthew Eapen</span>
+        </div>
+        <div class="detail-row">
+          <span class="dr-key">Student ID</span>
+          <span class="dr-val">2647138</span>
+        </div>
+        <div class="detail-row">
+          <span class="dr-key">Date of Birth</span>
+          <span class="dr-val">28 March 2005</span>
+        </div>
+        <div class="detail-row">
+          <span class="dr-key">Program</span>
+          <span class="dr-val">MCA</span>
+        </div>
+        <div class="detail-row">
+          <span class="dr-key">Semester</span>
+          <span class="dr-val">1st Semester</span>
+        </div>
+        <div class="detail-row">
+          <span class="dr-key">Department</span>
+          <span class="dr-val">Computer Science</span>
+        </div>
+        <div class="detail-row">
+          <span class="dr-key">Organizer ID</span>
+          <span class="dr-val" style="color: var(--muted);">Not assigned</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Registrations -->
+    <div>
+      <div class="stat-strip">
+        <div class="stat-box">
+          <div class="s-num">3</div>
+          <div class="s-label">Registered Events</div>
+        </div>
+        <div class="stat-box">
+          <div class="s-num">2</div>
+          <div class="s-label">Upcoming</div>
+        </div>
+        <div class="stat-box">
+          <div class="s-num">1</div>
+          <div class="s-label">Completed</div>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active">Registered Events</button>
+        <button class="tab">Past Events</button>
+      </div>
+
+      <table class="reg-table">
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Fest</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="event_detail.html" class="link-view">Coding Contest</a></td>
+            <td>Gateways 2025</td>
+            <td>13 Mar 2025</td>
+            <td><span class="badge badge-upcoming">Upcoming</span></td>
+            <td><button class="withdraw-btn">Withdraw</button></td>
+          </tr>
+          <tr>
+            <td><a href="event_detail.html" class="link-view">Paper Presentation</a></td>
+            <td>Pragma 2025</td>
+            <td>22 Apr 2025</td>
+            <td><span class="badge badge-upcoming">Upcoming</span></td>
+            <td><button class="withdraw-btn">Withdraw</button></td>
+          </tr>
+          <tr>
+            <td><a href="event_detail.html" class="link-view">Quiz Competition</a></td>
+            <td>Gateways 2025</td>
+            <td>12 Mar 2025</td>
+            <td><span class="badge badge-closed">Completed</span></td>
+            <td><span style="font-size:0.8rem;color:var(--muted);">Closed</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</body>
+</html>

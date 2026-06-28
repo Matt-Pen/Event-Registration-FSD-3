@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EventHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS\organizer.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-brand">EventHub</div>
+    <div class="nav-right">
+      <span class="tag-organizer">Organizer</span>
+      <a href="studenthome.html">Logout</a>
+    </div>
+  </nav>
+
+  <div class="layout">
+
+    <aside>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Organizer</div>
+        <a href="#" class="sidebar-link active">My Fests</a>
+        <a href="#" class="sidebar-link">Registrations</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Account</div>
+        <a href="profile.html" class="sidebar-link">My Profile</a>
+        <a href="login.html" class="sidebar-link">Logout</a>
+      </div>
+    </aside>
+
+    <main>
+      <div class="page-header">
+        <div>
+          <h1>Organizer Dashboard</h1>
+          <p>Create and manage your fests and sub-events.</p>
+        </div>
+      </div>
+
+      <!-- Create Fest Form -->
+      <div class="form-card">
+        <h2>Create a New Fest</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fest-name">Fest Name</label>
+            <input type="text" id="fest-name" placeholder="e.g. Gateways 2025" />
+          </div>
+          <div class="form-group">
+            <label for="dept">Department</label>
+            <select id="dept">
+              <option value="">Select department</option>
+              <option>Computer Science</option>
+              <option>Electronics</option>
+              <option>Management</option>
+              <option>Arts and Humanities</option>
+              <option>Science</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row three">
+          <div class="form-group">
+            <label for="start-date">Start Date</label>
+            <input type="date" id="start-date" />
+          </div>
+          <div class="form-group">
+            <label for="end-date">End Date</label>
+            <input type="date" id="end-date" />
+          </div>
+          <div class="form-group">
+            <label for="fest-teams">Teams Involved</label>
+            <input type="text" id="fest-teams" placeholder="e.g. Core, Media, Ops" />
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-primary" onclick="openModal()">Create Fest</button>
+          <button class="btn btn-outline">Clear</button>
+        </div>
+      </div>
+
+      <!-- Existing Fests -->
+      <div class="section-title">Your Fests</div>
+
+      <!-- Fest 1 -->
+      <div class="fest-card">
+        <div class="fest-header">
+          <div class="fest-header-left">
+            <h3>Gateways 2025</h3>
+            <p>Computer Science | 12 Mar 2025 — 14 Mar 2025</p>
+          </div>
+          <div class="fest-meta">
+            <div>Sub-Events  <span>3</span></div>
+            <div>Enrolled  <span>142</span></div>
+          </div>
+          <div class="fest-actions">
+            <button class="btn btn-outline">Edit Fest</button>
+          </div>
+        </div>
+
+        <table class="subevent-table">
+          <thead>
+            <tr>
+              <th>Sub-Event</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Quiz Competition</td>
+              <td>12 Mar 2025</td>
+              <td>10:00 — 12:00</td>
+              <td><span class="badge badge-open">Open</span></td>
+            </tr>
+            <tr>
+              <td>Coding Contest</td>
+              <td>13 Mar 2025</td>
+              <td>09:00 — 13:00</td>
+              <td><span class="badge badge-open">Open</span></td>
+            </tr>
+            <tr>
+              <td>Dance Contest</td>
+              <td>14 Mar 2025</td>
+              <td>15:00 — 18:00</td>
+              <td><span class="badge badge-closed">Closed</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="add-subevent-row">
+          <input type="text" placeholder="Sub-event name" />
+          <input type="date" />
+          <input type="time" placeholder="Start" />
+          <input type="time" placeholder="End" />
+          <select>
+            <option value="open">Open</option>
+            <option value="closed">Closed</option>
+          </select>
+          <button class="btn btn-primary">Add Sub-Event</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <div id="confirm-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:999; align-items:center; justify-content:center;">
+  <div style="background:#162444; border:1px solid #2a3a58; border-radius:4px; padding:36px 40px; max-width:420px; width:90%;">
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:10px;">Confirm Fest Creation</h3>
+    <p style="font-size:0.875rem; color:#8a95a8; margin-bottom:28px; line-height:1.6;">
+      Are you sure you want to create this fest? Make sure all details are correct before confirming.
+    </p>
+    <div style="display:flex; gap:12px; justify-content:flex-end;">
+      <button onclick="closeModal()" style="padding:9px 20px; background:transparent; border:1px solid #2a3a58; color:#8a95a8; font-family:'Source Sans 3',sans-serif; font-size:0.875rem; border-radius:2px; cursor:pointer;">
+        Cancel
+      </button>
+      <button onclick="confirmCreate()" style="padding:9px 20px; background:#e8a020; color:#0f1e38; font-family:'Source Sans 3',sans-serif; font-size:0.875rem; font-weight:600; border:none; border-radius:2px; cursor:pointer;">
+        Yes, Create Fest
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal() {
+    const modal = document.getElementById('confirm-modal');
+    modal.style.display = 'flex';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('confirm-modal');
+    modal.style.display = 'none';
+  }
+
+  function confirmCreate() {
+    closeModal();
+    // Your form submission logic goes here
+  }
+</script>
+
+</body>
+</html>

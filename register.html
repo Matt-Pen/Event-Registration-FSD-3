@@ -64,44 +64,54 @@
 
             <!-- Registration Form -->
 
-            <div id="viewer-form" class="form-container">
-                <h3>Viewer Registration</h3>
+            <div class="form-container" id="reg-form-container">
+                <h3>Event Registration</h3>
 
+                <!-- ── PERSONAL DETAILS ── -->
                 <div class="section-sep">Personal Details</div>
 
-                <div class="input-group" id="vg-designation">
-                    <label>Designation</label>
-                    <select id="v-designation">
-                        <option value="">Select designation</option>
-                        <option>Mr</option>
-                        <option>Miss</option>
-                        <option>Mrs</option>
-                    </select>
-                    <span class="error-msg">Please select a designation.</span>
+                <div class="fields-row">
+                    <div class="input-group" id="ig-designation">
+                        <label for="f-designation">Designation</label>
+                        <select id="f-designation">
+                            <option value="">Select designation</option>
+                            <option>Mr</option>
+                            <option>Miss</option>
+                            <option>Mrs</option>
+                            <option>Dr</option>
+                        </select>
+                        <span class="error-msg">Please select a designation.</span>
+                    </div>
+
+                    <div class="input-group" id="ig-dob">
+                        <label for="f-dob">Date of Birth</label>
+                        <input type="date" id="f-dob" />
+                        <span class="error-msg">Date of birth is required.</span>
+                    </div>
                 </div>
 
                 <div class="fields-row">
-                    <div class="input-group" id="vg-firstname">
-                        <label>First Name</label>
-                        <input type="text" id="v-firstname" placeholder="John">
+                    <div class="input-group" id="ig-firstname">
+                        <label for="f-firstname">First Name</label>
+                        <input type="text" id="f-firstname" placeholder="John" />
                         <span class="error-msg">First name is required.</span>
                     </div>
-                    <div class="input-group" id="vg-lastname">
-                        <label>Last Name</label>
-                        <input type="text" id="v-lastname" placeholder="Doe">
+                    <div class="input-group" id="ig-lastname">
+                        <label for="f-lastname">Last Name</label>
+                        <input type="text" id="f-lastname" placeholder="Doe" />
                         <span class="error-msg">Last name is required.</span>
                     </div>
                 </div>
 
                 <div class="fields-row">
-                    <div class="input-group" id="vg-roll">
-                        <label>Roll No.</label>
-                        <input type="text" id="v-roll" placeholder="e.g. 22CS045">
+                    <div class="input-group" id="ig-roll">
+                        <label for="f-roll">Roll No.</label>
+                        <input type="text" id="f-roll" placeholder="e.g. 22CS045" />
                         <span class="error-msg">Roll number is required.</span>
                     </div>
-                    <div class="input-group" id="vg-dept">
-                        <label>Department</label>
-                        <select id="v-dept">
+                    <div class="input-group" id="ig-dept">
+                        <label for="f-dept">Department</label>
+                        <select id="f-dept">
                             <option value="">Select department</option>
                             <option>Computer Science</option>
                             <option>Electronics</option>
@@ -115,21 +125,35 @@
                 </div>
 
                 <div class="fields-row">
-                    <div class="input-group" id="vg-phone">
-                        <label>Phone No.</label>
-                        <input type="tel" id="v-phone" placeholder="+91 XXXXX XXXXX" maxlength="10">
+                    <div class="input-group" id="ig-phone">
+                        <label for="f-phone">Phone No.</label>
+                        <input type="tel" id="f-phone" placeholder="+91 XXXXX XXXXX" maxlength="10" />
                         <span class="error-msg">Enter a valid 10-digit phone number.</span>
                     </div>
-                    <div class="input-group" id="vg-email">
-                        <label>Email</label>
-                        <input type="email" id="v-email" placeholder="john@college.edu">
+                    <div class="input-group" id="ig-email">
+                        <label for="f-email">Email</label>
+                        <input type="email" id="f-email" placeholder="john@college.edu" />
                         <span class="error-msg">Enter a valid email address.</span>
                     </div>
                 </div>
 
-                <div class="input-group" id="vg-slot">
-                    <label>Preferred Time Slot</label>
-                    <select id="v-slot">
+                <!-- ── ACCOUNT ── -->
+                <div class="section-sep">Account Security</div>
+
+                <div class="fields-row">
+                    <div class="input-group" id="ig-password">
+                        <label for="f-password">Password</label>
+                        <input type="password" id="f-password" placeholder="Min. 8 characters" />
+                        <span class="error-msg" id="pwd-err">Password must be at least 8 characters.</span>
+                    </div>
+                </div>
+
+                <!-- ── EVENT PREFERENCES ── -->
+                <div class="section-sep">Event Preferences</div>
+
+                <div class="input-group" id="ig-slot">
+                    <label for="f-slot">Preferred Time Slot</label>
+                    <select id="f-slot">
                         <option value="">Select a slot</option>
                         <option>Morning Session — 10:00 AM to 12:00 PM</option>
                         <option>Afternoon Session — 1:00 PM to 3:00 PM</option>
@@ -138,13 +162,265 @@
                     <span class="error-msg">Please select a time slot.</span>
                 </div>
 
-                <button class="submit-btn" id="viewer-submit">Register as Viewer</button>
+                <div class="input-group" id="ig-role">
+                    <label for="f-role">Participation Role</label>
+                    <select id="f-role">
+                        <option value="">Select role</option>
+                        <option>Participant</option>
+                        <option>Viewer</option>
+                        <option>Volunteer</option>
+                    </select>
+                    <span class="error-msg">Please select a participation role.</span>
+                </div>
+
+                <!-- ── DOCUMENTS ── -->
+                <div class="section-sep">Documents & Photo</div>
+
+                <div class="input-group" id="ig-photo">
+                    <label for="f-photo">Profile Photo</label>
+                    <input type="file" id="f-photo" accept="image/*" />
+                    <span class="error-msg">Please upload a profile photo.</span>
+                </div>
+
+                <div class="input-group" id="ig-idcard">
+                    <label for="f-idcard">College ID / Document (PDF or Image)</label>
+                    <input type="file" id="f-idcard" accept=".pdf,image/*" />
+                    <span class="error-msg">Please upload your college ID.</span>
+                </div>
+
+                <button class="submit-btn" id="reg-submit">Register for Event</button>
+            </div><!-- /form-container -->
+
+        </div><!-- /page-grid -->
+
+        <!-- REGISTRATION SUMMARY CARD (shown after submit) -->
+        <div id="reg-card-section">
+            <div class="reg-card" id="reg-card">
+                <!-- filled by JS -->
 
 
+                
             </div>
+            <button class="delete-btn submit-btn" id="delete-data-btn">Delete registration</button>
+            
+        </div>
 
     </main>
 
+    <script>
+
+        /* ── Helpers ── */
+        const $ = (id) => document.getElementById(id);
+
+        $('delete-data-btn').addEventListener('click', async()=>{   
+            const form=$('reg-form-container');
+            const regcard=$('reg-card-section');
+            localStorage.removeItem('eventhub_registration');
+            form.scrollIntoView({behavior:"smooth", block:"start"});
+            regcard.style.display='none';   
+
+        })
+
+        const setErr = (groupId, show) => {
+            const el = $(groupId);
+            if (!el) return;
+            show ? el.classList.add('error') : el.classList.remove('error');
+        };
+
+        const clearOnInput = (inputId, groupId) => {
+            const el = $(inputId);
+            if (!el) return;
+            el.addEventListener('input', () => setErr(groupId, false));
+            el.addEventListener('change', () => setErr(groupId, false));
+        };
+
+        /* ── Attach live-clear listeners ── */
+        const fields = [
+            ['f-designation', 'ig-designation'],
+            ['f-dob', 'ig-dob'],
+            ['f-firstname', 'ig-firstname'],
+            ['f-lastname', 'ig-lastname'],
+            ['f-roll', 'ig-roll'],
+            ['f-dept', 'ig-dept'],
+            ['f-phone', 'ig-phone'],
+            ['f-email', 'ig-email'],
+            ['f-password', 'ig-password'],
+            ['f-slot', 'ig-slot'],
+            ['f-role', 'ig-role'],
+            ['f-photo', 'ig-photo'],
+            ['f-idcard', 'ig-idcard'],
+        ];
+        fields.forEach(([inputId, groupId]) => clearOnInput(inputId, groupId));
+
+        /* ── Phone: digits only ── */
+        $('f-phone').addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
+
+
+        /* ── Validation ── */
+        const validate = () => {
+            let ok = true;
+
+            const require = (id, groupId, condition = null) => {
+                const el = $(id);
+                const val = el ? el.value.trim() : '';
+                const fail = condition ? !condition(val, el) : !val;
+                setErr(groupId, fail);
+                if (fail) ok = false;
+            };
+
+            require('f-designation', 'ig-designation');
+            require('f-dob', 'ig-dob');
+            require('f-firstname', 'ig-firstname');
+            require('f-lastname', 'ig-lastname');
+            require('f-roll', 'ig-roll');
+            require('f-dept', 'ig-dept');
+            require('f-phone', 'ig-phone', (v) => /^\d{10}$/.test(v));
+            require('f-email', 'ig-email', (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+            require('f-password', 'ig-password', (v) => v.length >= 8);
+            require('f-slot', 'ig-slot');
+            require('f-role', 'ig-role');
+
+            // file inputs
+            const photoFile = $('f-photo').files[0];
+            const idFile = $('f-idcard').files[0];
+            setErr('ig-photo', !photoFile);
+            setErr('ig-idcard', !idFile);
+            if (!photoFile || !idFile) ok = false;
+
+            return ok;
+        };
+
+        /* ── Build & show registration card ── */
+        const showCard = (data) => {
+            const section = $('reg-card-section');
+            const card = $('reg-card');
+
+            const avatarHtml = data.photoDataUrl
+                ? `<img class="reg-avatar-img" src="${data.photoDataUrl}" alt="Profile photo" />`
+                : `<div class="reg-avatar-placeholder">${data.firstName[0]}${data.lastName[0]}</div>`;
+
+            card.innerHTML = `
+        <div class="reg-card-header">
+          <div>
+            <h3>Registration Successful!</h3>
+            <p>Registered on ${data.registeredAt}</p>
+          </div>
+        </div>
+ 
+        <div class="reg-avatar-row">
+          ${avatarHtml}
+          <div>
+            <div class="reg-name">${data.designation} ${data.firstName} ${data.lastName}</div>
+            <span class="reg-role-badge">${data.role}</span>
+          </div>
+        </div>
+ 
+        <div class="reg-grid">
+          <div class="reg-field">
+            <span class="reg-field-label">Roll No.</span>
+            <span class="reg-field-value">${data.roll}</span>
+          </div>
+          <div class="reg-field">
+            <span class="reg-field-label">Department</span>
+            <span class="reg-field-value">${data.dept}</span>
+          </div>
+          <div class="reg-field">
+            <span class="reg-field-label">Date of Birth</span>
+            <span class="reg-field-value">${data.dob}</span>
+          </div>
+          <div class="reg-field">
+            <span class="reg-field-label">Phone</span>
+            <span class="reg-field-value">${data.phone}</span>
+          </div>
+          <div class="reg-field">
+            <span class="reg-field-label">Email</span>
+            <span class="reg-field-value">${data.email}</span>
+          </div>
+          <div class="reg-field">
+            <span class="reg-field-label">Time Slot</span>
+            <span class="reg-field-value">${data.slot}</span>
+          </div>
+          <div class="reg-field">
+            <span class="reg-field-label">ID Document</span>
+            <span class="reg-field-value">${data.idFileName}</span>
+          </div>
+        </div>
+ 
+      `;
+
+            section.style.display = 'block';
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+
+        /* ── Read file as base64 (returns Promise) ── */
+        const readFileAsBase64 = (file) => new Promise((resolve, reject) => {
+            if (!file) { resolve(null); return; }
+            const reader = new FileReader();
+            reader.onload = (e) => resolve(e.target.result);
+            reader.onerror = () => reject(new Error('File read failed'));
+            reader.readAsDataURL(file);
+        });
+
+        /* ── Submit handler ── */
+        $('reg-submit').addEventListener('click', async () => {
+            if (!validate()) {
+                // scroll to first error
+                const firstError = document.querySelector('.input-group.error');
+                if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+
+            const photoDataUrl = await readFileAsBase64($('f-photo').files[0]);
+            const idFileName = $('f-idcard').files[0]?.name ?? '';
+
+            const regData = {
+                designation: $('f-designation').value,
+                dob: $('f-dob').value,
+                firstName: $('f-firstname').value.trim(),
+                lastName: $('f-lastname').value.trim(),
+                roll: $('f-roll').value.trim(),
+                dept: $('f-dept').value,
+                phone: $('f-phone').value.trim(),
+                email: $('f-email').value.trim(),
+                slot: $('f-slot').value,
+                role: $('f-role').value,
+                photoDataUrl,
+                idFileName,
+                registeredAt: new Date().toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' }),
+            };
+
+            /* ── LocalStorage: overwrite any previous registration ── */
+            localStorage.setItem('eventhub_registration', JSON.stringify(regData));
+
+            showCard(regData);
+        });
+
+        /* ── On page load: restore previous registration if any ── */
+        const saved = localStorage.getItem('eventhub_registration');
+        if (saved) {
+            try {
+                const data = JSON.parse(saved);
+
+                /* Pre-fill form fields */
+                const preSet = (id, val) => { const el = $(id); if (el) el.value = val ?? ''; };
+                preSet('f-designation', data.designation);
+                preSet('f-dob', data.dob);
+                preSet('f-firstname', data.firstName);
+                preSet('f-lastname', data.lastName);
+                preSet('f-roll', data.roll);
+                preSet('f-dept', data.dept);
+                preSet('f-phone', data.phone);
+                preSet('f-email', data.email);
+                preSet('f-slot', data.slot);
+                preSet('f-role', data.role);
+
+                /* Show the saved card immediately */
+                showCard(data);
+            } catch (_) { /* corrupt data – ignore */ }
+        }
+    </script>
 </body>
 
 </html>

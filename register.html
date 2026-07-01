@@ -189,16 +189,12 @@
                 </div>
 
                 <button class="submit-btn" id="reg-submit">Register for Event</button>
-            </div><!-- /form-container -->
+            </div>
 
-        </div><!-- /page-grid -->
+        </div>
 
-        <!-- REGISTRATION SUMMARY CARD (shown after submit) -->
         <div id="reg-card-section">
             <div class="reg-card" id="reg-card">
-                <!-- filled by JS -->
-
-
                 
             </div>
             <button class="delete-btn submit-btn" id="delete-data-btn">Delete registration</button>
@@ -402,8 +398,6 @@
         if (saved) {
             try {
                 const data = JSON.parse(saved);
-
-                /* Pre-fill form fields */
                 const preSet = (id, val) => { const el = $(id); if (el) el.value = val ?? ''; };
                 preSet('f-designation', data.designation);
                 preSet('f-dob', data.dob);
@@ -415,10 +409,8 @@
                 preSet('f-email', data.email);
                 preSet('f-slot', data.slot);
                 preSet('f-role', data.role);
-
-                /* Show the saved card immediately */
                 showCard(data);
-            } catch (_) { /* corrupt data – ignore */ }
+            } catch (_) { }
         }
     </script>
 </body>
